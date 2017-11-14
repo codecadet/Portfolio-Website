@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+   
+        var customerIsBuying = true;
+        var prices = true;
+        var Money;
+        var chipsPrice;
+        var sodaPrice;
+        var cookiesPrice;
+        var chipsStock;
+        var sodaStock;
+        var cookiesStock;
+        var customerChoice;
+        var index=0;
+        var vendableItems=[];
+        var purchasedItems=[];
+        var lowestPriced;
+        var totalVendableItems=0;
+        
+        // the user has to at least include these 3 products
+        Money=prompt("hey how much money do you have??");
+        Money=parseFloat(Money);
+        chipsPrice=prompt("how much do chips go for around here?");
+        chipsStock=prompt("How many bags of chips are in the machine?");
+        sodaPrice=prompt("wait..then how much is soda in this vending machine?");
+        sodaStock=prompt("how many cans of soda are there in this vending machine?");
+        cookiesPrice=prompt("ok then how much do cookies cost?");
+        cookiesStock=prompt("ok then how many bags of cookies are in the vending machine!?")
+        index=index+1;
+            lowestPriced=chipsPrice;
+         if(sodaPrice<lowestPriced)
+            {
+                lowestPriced=sodaPrice;
+            }
+        if(cookiesPrice<lowestPriced)
+            {
+                lowestPriced=cookiesPrice;
+            }
+
+        function buyableItem(n,p,q,id) // object to store items in our vending machine.
+        {
+            this.name=n;
+            this.price=parseFloat(p);
+            this.quantity=parseFloat(q); // how many of that item
+            this.id_number=id;//some sort of id to find the
+        }
+        var  temp = new buyableItem("chips",chipsPrice,chipsStock,index);
+        vendableItems.push(temp);
+        index=index+1;
+        var  temp = new buyableItem("soda",sodaPrice,sodaStock,index);
+        vendableItems.push(temp)
+      
+        index=index+1;
+        var  temp = new buyableItem("cookies",cookiesPrice,cookiesStock,index);
+        vendableItems.push(temp); 
+        
+        function addItem()
+        {
+            index=index+1;
+            n=prompt("what is the name of the item ");
+            p=prompt("how much do "+n+ " cost?");
+            q=prompt("How many " + +n+ " are in this vending machine");
+            var item=new buyableItem(n,p,q,index);
+            vendableItems.push(item); // add the item to our vending machines inventory
+            if(p<lowestPriced)
+                {
+                    lowestPriced=p;
+                }
+        }
+        function history() // this function will alert the user to their transaction history
+        {
+            var spent=0;
+            var items = "";
+            if( purchasedItems.length>0)
+            {
+             for(var i=0; i<purchasedItems.length;i++)
+                {
+                    var pi=purchasedItems[i];
+                    ts= "you bought "+pi.name+" for "+ pi.price +" dollar(s).";
+                    items=items+ts;
+                    spent=spent+pi.price;
+                }
+                alert("you have purchased "+ purchasedItems.length+" item(s)");
+                alert(items);
+                alert("you have spent "+spent+" dollar(s).");
+            }
+            else
+                {
+                    alert("you have not purchased any items");
+                }
+        }
+        function vendingMachineInventory() // a function to print out all the information the user needs to use our vending machine
+        {
+           alert("there are "+ totalVendableItems +" items in this vending machine");
+               for(var i=0; i<vendableItems.length;i++)
+                {
+                    var vi=vendableItems[i];
+                    ts= vi.name+" costs "+ vi.price +" dollars  you  can enter " + vi.id_number+" to purchase one. Currently there are  " + vi.quantity+ " left in the vending machine" ;
+                    alert(ts); // pops up an alert giving item by item information
+                }
+           
+            
+        }
+        function Menu() // function to create a prompt for our customer to use to navigate our Vending Machine
+        {   
+            
+            var correctInput=false;
+            customerChoice=prompt("What would you like to do? type 'inventory' to reveal information about the products within the vending machine, type the item id to buy an item, type stock to stock the vending machine with a new item, type 'done' to end your transaction or type 'history' to see what you have purchased" );
+            if(customerChoice=="done")
+                {
+                    customerIsBuying=false;
+                    correctInput=true;
+                }
+            if(customerChoice=="inventory")
+                {
+                       vendingMachineInventory();
+                      correctInput=true;
+                }
+              if(customerChoice=="history")
+                {
+                   history();
+                      correctInput=true;
+                }
+            for(var i=0; i<vendableItems.length;i++)
+                {
+                  
+                    if(vendableItems[i].id_number==customerChoice)
+                        {
+                              correctInput=true;
+                            var r = confirm("Would you like to purchase "+vendableItems[i].name+" the price is "+vendableItems[i].price+" dollars" );
+                            if(r == true)
+                                {
+                                    if(Money>=vendableItems[i].price)
+                                        {
+                                            if(vendableItems[i].quantity>0)
+                                                {
+                                                    Money=Money-vendableItems[i].price;
+                                                    purchasedItems.push(vendableItems[i]);
+                                                    vendableItems[i].quantity=vendableItems[i].quantity-1;
+                                                }
+                                            else
+                                                {
+                                                    alert("sorry it looks like we are currently out of " + vendableItems[i].name);
+                                                }
+                                        }
+                                    else
+                                        {
+                                            alert("it looks like you cannot afford."+ vendableItems[i].name + "Sorry! Try purchasing another item!");
+                                        } 
+                                }
+                            else
+                                {
+                                    alert("Transaction Canceled");
+                                }
+                            
+                        }
+                    
+                }
+        
+            if(correctInput==false)
+                {
+                    alert("sorry I did not understand that please make sure you type one of the specified values given. If you do not know an ID Number type 'inventory' for product information." );
+                }
+        }
+        
+
+        
+    while(customerIsBuying)
+    {
+   
+        if(Money>=lowestPriced) // this loop checks to make sure we have enough money to shop, and that the vending machine has items within it. 
+        {
+            alert("you have "+ Money+ " dollars");
+                 totalVendableItems=0;
+                       
+               for(var i=0; i<vendableItems.length;i++)
+                {
+                  totalVendableItems= totalVendableItems + vendableItems[i].quantity;
+                }
+            if(vendingMachineInventory<1)
+                {
+                    alert("There is nothing left in the vending machine have a nice day!");
+                    customerIsBuying=false;
+                }
+            else
+                {
+                    Menu();
+                }
+       
+                
+        }
+        else
+        {
+            alert("you do not have enough money to shop here thank you and goodbye");
+                customerIsBuying=false;
+        }
+        
+        
+    }
+        
+        alert("please come again!");
+     
+       
+         
+    </script>
+</head>
+<body>
+ 
+</body>
+</html>
