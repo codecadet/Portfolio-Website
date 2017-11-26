@@ -98,8 +98,8 @@ p {
     font-family: verdana;
     font-size: 20px;
     color: black;
-    text-align: Left;
-    padding-left:15px;
+    text-align: center-left;
+    padding-left:50px;
     padding-right:15px;
 }
 
