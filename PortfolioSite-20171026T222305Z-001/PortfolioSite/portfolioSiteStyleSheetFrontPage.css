@@ -198,7 +198,7 @@ html, body
   max-width: 1000px;
   position: relative;
   margin: auto;
-  padding-top: 150px;
+  padding-top: 270px;
 }
 
 .mySlides {
@@ -233,7 +233,7 @@ html, body
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: black;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
