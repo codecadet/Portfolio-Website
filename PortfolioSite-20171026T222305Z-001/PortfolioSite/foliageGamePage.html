@@ -1,20 +1,12 @@
-
 <link rel = "stylesheet" 
 type = "text/css"
 href ="portfolioSiteStyleSheetFrontPage.css"/>
 <html>
     <head>
 
-        <Title> Chase Christensen's Portfolio Site </Title>
+        <Title> Foliage Feud Game </Title>
     </head>
     <body>
-        <h1> Chase Christensen</h1>
-        <h2> Software Developer and Game Designer</h2>
-        <h3> University of Wisconsin Stout Class of 2017 </h3>
-        <h3>Bachelor's of Science: Game Design and Development(Computer Science Concentration) </h3>
-        <h3> Applied Language Minor</h3>
-        <h4> Contact Information:<a href="mailto:christensenc3526@gmail.com">christensenc3526@gmail.com</a></h4>
-
         <div class="navbar" id="navbar">
                 <a href="PortfolioSitev1.html"> Home</a>
                 <a href="Resume.html">Resume</a>
@@ -47,21 +39,66 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
                 </div> 
                 <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>
                 <a href="bio.html">About Me</a>
+            <div id = "Title"> <img src="Feud.PNG" alt="Foliage Feud " ></div>
             </div>
+        
+        //code for the slide show element.
+        <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="FoliageOpeningImage.png" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
 
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src= "FoliagePlantGame.jpg" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
 
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src= "foliageShop.PNG" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
 
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
 
-        <div class="idImage">    
-            <img src="lovingit.jpg" alt="Me helping Students develop a web page" >
-        </div>
-        <p>
-        Thank you for visiting my portfolio page!This website is a work in progress, as I explore better web development practices I hope to continue to drastically improve this webpage. Please use the above links to explore different aspects of my professional life.Use the feedback link to navigate to a google survey that will ask you about ways I can improve this site. I am always looking for new projects and ways to improve.Thanks again! <br>
-        Sincerely, <br>
-        Chase Christensen 
-       </p>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+<script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
     </body>
 </html>
-
-
-

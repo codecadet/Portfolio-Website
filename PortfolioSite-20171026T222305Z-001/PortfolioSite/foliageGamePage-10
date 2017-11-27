@@ -1,4 +1,3 @@
-
 <link rel = "stylesheet" 
 type = "text/css"
 href ="portfolioSiteStyleSheetFrontPage.css"/>
@@ -12,7 +11,7 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
         <h2> Software Developer and Game Designer</h2>
         <h3> University of Wisconsin Stout Class of 2017 </h3>
         <h3>Bachelor's of Science: Game Design and Development(Computer Science Concentration) </h3>
-        <h3> Applied Language Minor</h3>
+        <h3> Applied Language Minor
         <h4> Contact Information:<a href="mailto:christensenc3526@gmail.com">christensenc3526@gmail.com</a></h4>
 
         <div class="navbar" id="navbar">
@@ -62,6 +61,3 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
        </p>
     </body>
 </html>
-
-
-
