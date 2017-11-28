@@ -38,46 +38,45 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
                     </div>
                 </div> 
                 <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>
-                <a href="bio.html">About Me</a>
-               <div id = "Title"> <img src="Feud.PNG" alt="Foliage Feud " ></div>
-               <div id = "button"> <img src="Playbutton.jpg" alt="play button " ></div>
+                <a href="bio.html">About Me</a>      
         </div>
               
-        
+               <div id = "Title"> <img src="Feud.PNG" alt="Foliage Feud " ></div>
+               <div id = "button"> <img src="Playbutton.jpg" alt="play button " ></div>
 
             <div class="slideshow-container">
       <div class="mySlides fade">
         <div class="numbertext"></div>
-            <img src="FoliageOpeningImage.png" style="width:100%">
+            <img src="FoliageOpeningImage.png" style="width:50%" border="5">
         <div class="text">The Tutorial Level</div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext"></div>
-            <img src= "FoliagePlantGame.jpg" style="width:100%">
+            <img src= "FoliagePlantGame.jpg" style="width:50%" border="5">
         <div class="text">Match the plant to its description to earn points.</div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext"></div>
-            <img src= "foliageShop.PNG" style="width:100%">
+            <img src= "foliageShop.PNG" style="width:50%" border="5">
         <div class="text">Buy new upgrades with coins you discover.</div>
       </div>
       <div class="mySlides fade">
         <div class="numbertext"></div>
-            <img src= "FoliageTown.png" style="width:100%">
+            <img src= "FoliageTown.png" style="width:50%" border="5">
         <div class="text">Visit the town to practice your skills, buy upgrades, add plants to your collection, or travel to new areas.</div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext"></div>
-            <img src= "RaceGame.PNG" style="width:100%">
+            <img src= "RaceGame.PNG" style="width:50%" border="5">
         <div class="text">Answer correctly to get a boost. Answer wrong and risk being caught!</div>
       </div>
 
         <div class="mySlides fade">
             <div class="numbertext"></div>
-                <img src= "speedMatching.PNG" style="width:100%">
+                <img src= "speedMatching.PNG" style="width:50%" border="5">
             <div class="text">Match the plants to their names as fast as possible!</div>
       </div>
      
@@ -97,30 +96,55 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
     </div>
     <script>
             var slideIndex = 1;
+            var listener = false;
+            var slideTimer;
         showSlides(slideIndex);
 
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
+        function plusSlides(n) 
+        {
+            listener =false;    
+            slides[slideIndex-1].removeEventListener("onmouseover",setHoverTrue);
+            slides[slideIndex-1].removeEventListener("onmouseout",setHoverFalse);    
+            showSlides(slideIndex += n);
         }
 
         function currentSlide(n) {
           showSlides(slideIndex = n);
         }
-
+        function setHoverTrue()
+        {
+            slideTimer = setInterval(plusSlides(1), 1000);
+        
+        }
+        function setHoverFalse()
+        {
+             clearInterval(slideTimer);
+             
+        }
+        
         function showSlides(n) {
           var i;
-          var slides = document.getElementsByClassName("mySlides");
+          var slides = document.getElementsByClassName("mySlides fade");
           var dots = document.getElementsByClassName("dot");
           if (n > slides.length) {slideIndex = 1} 
           if (n < 1) {slideIndex = slides.length}
           for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none"; 
+              slides[i].style.display = "none";
+              
           }
           for (i = 0; i < dots.length; i++) {
               dots[i].className = dots[i].className.replace(" active", "");
           }
-          slides[slideIndex-1].style.display = "block"; 
+          slides[slideIndex-1].style.display = "block";
           dots[slideIndex-1].className += " active";
+           
+            if(!listener)
+                {
+                   window.alert("attempting to add listener");
+                   slides[slideIndex-1].addEventListener("mouseover",setHoverTrue());
+                   slides[slideIndex-1].addEventListener("onmouseout",setHoverFalse());
+                   listener = true;
+                }
         }
         </script>
     </body>
