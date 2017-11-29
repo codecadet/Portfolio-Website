@@ -94,6 +94,30 @@ padding-top:15px;
 	padding-top:50px;
 }
 
+.button_container {
+ 
+    height: 750px;
+    width: 100vw;
+    padding-left: 35vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333333;
+    padding-top: 20vh;
+    padding-right: 200px;
+}
+
+.gameButton{
+    display:inline-block;
+    width: 256px; 
+    height: 256px; 
+   }
+ .docButton
+ {
+   display:inline-block;
+    width: 256px; 
+    height: 256px; 
+ }
+
 p {
     font-family: verdana;
     font-size: 20px;
@@ -195,12 +219,14 @@ html, body
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 750px;
+  width: 75vw;
+  height:256px;
   position: relative;
-  max-height: 100px;
   margin: center-left;
   padding-top: 25px;
-  padding-left: 25px;
+  padding-left: 25vw;
+
+ 
 
 }
 
@@ -237,7 +263,7 @@ html, body
   color: black;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute;
+  position: relative;
   bottom: 8px;
   width: 100%;
   text-align: center;
@@ -254,11 +280,11 @@ html, body
 
 /* The dots/bullets/indicators */
 .dot {
+   margin-top: 7vw;
   cursor:pointer;
   height: 15px;
   width: 15px;
-  margin-top: 275px;
-  right:425px;
+  left:0vw;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
