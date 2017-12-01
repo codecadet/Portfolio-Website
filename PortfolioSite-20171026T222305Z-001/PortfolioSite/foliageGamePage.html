@@ -41,8 +41,10 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
                 <a href="bio.html">About Me</a>      
         </div>
               
-               <div id = "Title"> <img src="Feud.PNG" alt="Foliage Feud " ></div>
-
+               <div id = "Title"> <img src="Feud.PNG" alt="Foliage Feud " >
+                  <button id="Play" onclick="Play()">Play!</button> 
+                   <button id="doc" onclick="viewDoc()">Design Document</button> 
+              </div>
 
     <div class="slideshow-container" id ="container">
       <div class="mySlides fade">
@@ -100,6 +102,14 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
         function currentSlide(n) {
           showSlides(slideIndex = n);
         }
+        function Play()
+        {
+            window.location.href = 'http://docdingle.com/projects/games/FoliageFeud/src/main.html';
+        }
+        function viewDoc()
+        {
+            window.location.href = "FooliageFeudPage.html";
+        }
         function displayText()
         {
             if(slideIndex==1)
@@ -108,7 +118,7 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
             }
             else if(slideIndex==2)
             {
-                    document.getElementById("gameText").innerHTML = "The players must explore the world and discover mini games that test the player's knowledge in many different environments.The above mini game challenges the player to select the correct plant based on the given description.This mini game is the easiest game, and is meant to familiarize the player with the material.";    
+                document.getElementById("gameText").innerHTML = "The players must explore the world and discover mini games that test the player's knowledge through mini games and exploration.The above mini game challenges the player to select the correct plant based on the given description.This mini game is the easiest game, and is meant to familiarize the player with the material.";    
             }
             else if (slideIndex==3)
             {
@@ -116,7 +126,7 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
             }
             else if(slideIndex==4)
             {
-                document.getElementById("gameText").innerHTML = "The player can return to town at any point.Once in town, the player can visit their plant collection, play the educational mini games within the training area, check their overall progress at the HQ, or unlock new items. ";    
+                document.getElementById("gameText").innerHTML = "The player can return to town at any point.Once in town, the player can visit their plant collection, play the educational mini games within the training area, check their overall progress at the HQ, or unlock new items at the shop. ";    
             }
             else if(slideIndex==5)
             {
@@ -143,10 +153,7 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
           }
           slides[slideIndex-1].style.display = "block";
           dots[slideIndex-1].className += " active";
-          displayText();
-        
-             
-            
+          displayText();       
         }
         </script>
         <div class="slideDescription">
@@ -154,10 +161,7 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
            Folieage Feud is an educational game,developed over a single semester,to help students learn more about the plant life in Wisconsin State Parks.   
         </p>
         </div>    
-        <div class ="button_container">
-            <img class="gameButton" src=clicktoplay.png alt="play button " >
-            <img src=noun_729579_cc.png alt="doc button " class="gameButton" >
-        </div>
+     
       
             
     </body>

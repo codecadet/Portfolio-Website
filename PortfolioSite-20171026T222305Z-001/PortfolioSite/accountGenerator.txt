@@ -1,0 +1,265 @@
+
+#include <iostream>
+#include <cstdlib>
+#include <stdlib.h>
+#include <ctime>
+#include<fstream>
+#include <string>
+#include <sstream>
+#include <vector>
+using namespace std;
+  std::ofstream o("D:/Student Data/Desktop/betterAdmin_data.csv");
+std::string to_string(int i) //converts int to string
+{
+    std::stringstream ss;
+    ss <<i;
+    return ss.str();
+}
+//generates data for the student_account table
+string createRandomID() //creates a random student ID
+{
+    string c ="";
+    string student_id="";
+    for(int j=0; j<6;j++)
+        {
+            int x = rand()%9+1;
+            c=to_string(x);
+            student_id.append(c);
+        }
+        return student_id;
+
+}
+string createRandomAdminID() //creates a random student ID
+{
+    string c ="";
+    string student_id="";
+    student_id.append("0");
+    for(int j=0; j<5;j++)
+        {
+            int x = rand()%9;
+            c=to_string(x);
+            student_id.append(c);
+        }
+        return student_id;
+
+}
+string createUserName(string first,string last) //creates a random user name
+{
+    string c ="";
+    string userName="";
+    userName.append(first);
+    string subLast=last.substr(0,3);
+    userName.append(subLast);
+    for(int j=0; j<4;j++)
+        {
+            int x = rand()%9+1;
+            c=to_string(x);
+            userName.append(c);
+        }
+
+        return userName;
+
+}
+string randomPassword()
+{
+    string first_name[]={"Sophia","Jackson","Emma","Aiden","Olivia","Lucas","Ava","Liam","Mia","Noah","Isabella","Ethan",
+    "Riley","Mason","Aria","CadeN","Zoe","Oliver","Charlotte","Elijah","Lily","Grayson","Layla",
+   "Jacob","Amelia","Michael","Emily","Benjamin","Madelyn","Carter","Aubrey","James","Adalyn","Jayden",
+   "Madison","Logan","Chloe","Alexander","Harper","Caleb","Abigail","Ryan","Aaliyah","Luke","Avery","Daniel",
+    "Evelyn","Jack","Kaylee","William","Ella","Owen","Ellie","Gabriel","Scarlett","Matthew	Arianna","Connor",
+   "Hailey","Jayce","Nora","Isaac","Addison","Sebastian","Brooklyn","Henry","Hannah","Muhammad","Mila","Cameron",
+    "Leah","Wyatt","Elizabeth","Dylan","Sarah","Nathan","Eliana","Nicholas","Mackenzie","Julian","Peyton","Eli",
+   "Maria","Levi","Grace","Isaiah","Adeline","Landon","Elena","David","Anna","Christian","Victoria","Andrew","Camilla",
+    "Brayden","Lillian","John","Natalie","Lincoln"};
+    string last_name[]={"Collins Stewart","Sanchez","Morris","Rogers","Reed","Cook","Morgan","Bell","Murphy","Bailey","Rivera","Cooper","Richardson","Cox","Howard","Ward","Torres","Peterson","Gray","Ramirez","James",
+    "Watson","Brooks","Kelly","Sanders","Price","Bennett","Wood","Barnes","Ross","Henderson","Coleman","Jenkins","Perry","Powell","Long",
+    "Patterson","Hughes","Flores","Washington","Butler","Simmons","Foster","Gonzales","Bryant","Alexander","Russell","Griffin","Diaz","Hayes"};
+    string specialChar[]={"!","*","&","^","#","@","$","%"};
+    string password="";
+  for(int j=0; j<6;j++)
+        {
+           int p= rand()%9;
+            if(p%2==0)
+            {
+                int x = rand()%9+1;
+                string c=to_string(x);
+                password.append(c);
+            }
+            else
+            {
+                string randomShiz;
+                 int x = rand() % sizeof(first_name)/sizeof(first_name[0]);
+                 randomShiz=first_name[x];
+                 randomShiz=randomShiz.substr(0,2);
+                 password.append(randomShiz);
+                x = rand() % sizeof(last_name)/sizeof(last_name[0]);
+                 randomShiz=last_name[x];
+                 randomShiz=randomShiz.substr(0,1);
+                password.append(randomShiz);
+                 x = rand() % sizeof(specialChar)/sizeof(specialChar[0]);
+                  randomShiz=specialChar[x];
+                password.append(randomShiz);
+
+
+
+
+
+            }
+        }
+        return password;
+
+
+}
+/*void create_student_accounts()
+{
+     std::vector<int> first;
+    // 100 Baby First Names...
+    string first_name[]={"Sophia","Jackson","Emma","Aiden","Olivia","Lucas","Ava","Liam","Mia","Noah","Isabella","Ethan",
+    "Riley","Mason","Aria","CadeN","Zoe","Oliver","Charlotte","Elijah","Lily","Grayson","Layla",
+   "Jacob","Amelia","Michael","Emily","Benjamin","Madelyn","Carter","Aubrey","James","Adalyn","Jayden",
+   "Madison","Logan","Chloe","Alexander","Harper","Caleb","Abigail","Ryan","Aaliyah","Luke","Avery","Daniel",
+    "Evelyn","Jack","Kaylee","William","Ella","Owen","Ellie","Gabriel","Scarlett","Matthew	Arianna","Connor",
+   "Hailey","Jayce","Nora","Isaac","Addison","Sebastian","Brooklyn","Henry","Hannah","Muhammad","Mila","Cameron",
+    "Leah","Wyatt","Elizabeth","Dylan","Sarah","Nathan","Eliana","Nicholas","Mackenzie","Julian","Peyton","Eli",
+   "Maria","Levi","Grace","Isaiah","Adeline","Landon","Elena","David","Anna","Christian","Victoria","Andrew","Camilla",
+    "Brayden","Lillian","John","Natalie","Lincoln"};
+
+    vector<string> ids; // stores the ids to check for duplicates
+    vector<string> users;
+
+    string last_name[]={"Collins Stewart","Sanchez","Morris","Rogers","Reed","Cook","Morgan","Bell","Murphy","Bailey","Rivera","Cooper","Richardson","Cox","Howard","Ward","Torres","Peterson","Gray","Ramirez","James",
+    "Watson","Brooks","Kelly","Sanders","Price","Bennett","Wood","Barnes","Ross","Henderson","Coleman","Jenkins","Perry","Powell","Long",
+    "Patterson","Hughes","Flores","Washington","Butler","Simmons","Foster","Gonzales","Bryant","Alexander","Russell","Griffin","Diaz","Hayes"};
+
+    string major[]={"GDD","gender studies","film","physical fitness","hotel tourism","art","Mathmatics","Computer Science","French","English","Japanese","Information Technology","undeclared"};
+
+    std::ofstream o("D:/Student Data/Desktop/student_data.csv");
+         // sizes of the arrays used to find random first and last names.
+        int fsize = sizeof(first_name)
+        int lsize= sizeof(last_name)/sizeof(last_name[0]);
+        int msize=sizeof(major)/sizeof(major[0]);
+
+    for(int i=0;i<51;i++)
+    {
+        string id;
+        bool checking = true;
+        bool duplicate = false;
+        while(checking)
+        {
+            id=createRandomID();
+            if(i==0)
+            {
+                ids.push_back(id);
+                 cout <<id;
+
+            }
+            else
+            {
+                cout << ids.size();
+                for(int j=0;j<ids.size();j++)
+                {
+                    if(ids[j]==id)
+                    {
+                        duplicate=true;
+                    }
+
+                }
+
+            }
+            if(duplicate==false)
+                {
+                    checking=false;
+                }
+        }
+        // randomly picks firstname/lastname/major
+        string f_name=(first_name[rand()%fsize]);
+        string l_name=(last_name[rand()%lsize]);
+        string student_major=(major[rand()%msize]);
+        //randomly
+        string userName;
+
+        bool userCheck=true;
+        bool userDuplicate=false;
+        //checks for duplicate usernames and regenerates if it is not one.
+        while(userCheck)
+         {
+            userName=createUserName(f_name,l_name);
+            if(i==0)
+            {
+                users.push_back(userName);
+
+            }
+            else
+            {
+                for(int k=0;k<users.size();k++)
+                {
+                    if(users[k]==userName)
+                    {
+                        userDuplicate=true;
+                    }
+
+
+                }
+
+            }
+            if(userDuplicate==false)
+                {
+                    userCheck=false;
+                }
+
+
+
+         }
+         // print and put to a file the new user names
+        cout<<f_name<<","<<l_name<<","<<student_major<<","<<"0"<<","<<id<<","<<userName<<","<<"student"<<","<<userName<<"@myschool.edu"<<","<<"3/18/2017"<<","<<"3/18/2018"<<endl;
+        o<<f_name<<","<<l_name<<","<<student_major<<","<<"0"<<","<<id<<","<<userName<<","<<"student"<<","<<userName<<"@myschool.edu"<<","<<"3/18/2017"<<","<<"3/18/2018"<<endl;
+    }
+    o.close();
+
+}
+*/
+void createAdmin(string first, string last,string account)
+{
+
+    string id;
+
+        id=createRandomAdminID();
+        string userName;
+        userName=createUserName(first,last);
+
+        string pw=randomPassword();
+         // print and put to a file the new user names
+        cout<<first<<","<<last<<","<<id<<","<<userName<<","<<account<<","<<userName<<"@myschool.edu"<<","<<"4/13/2017"<<","<<"4/13/2018"<<","<<pw<<endl;
+        o<<first<<","<<last<<","<<id<<","<<userName<<","<<account<<","<<userName<<"@myschool.edu"<<","<<"4/13/2017"<<","<<"4/13/2018"<<","<<pw<<endl;
+
+
+
+
+}
+
+ //string major[]={"GDD","gender studies","film","physical fitness","hotel tourism","art","Mathmatics","Computer Science","French","English","Japanese","Information Technology","undeclared"};
+void createClass(string name, string description,string instructor,int maximum,int id)
+{
+
+      //o<<id<<","<<name<<","<<description<<","<<instructor<<","<<0<<","<<maximum<<endl;
+
+
+
+}
+
+int main()
+{
+
+    createAdmin("chase","christensen","admin");
+    createAdmin("jerry","he","admin");
+    createAdmin("jeffrey","McCuen","admin");
+    createAdmin("jacob","trang","admin");
+
+
+
+
+
+
+    return 0;
+
+}
