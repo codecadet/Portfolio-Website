@@ -50,19 +50,81 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
                 <a href=projectSelect.html>Projects</a>
             </div>
 
+        
+    <div class="slideshow-container" id ="container">
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src="lovingit.jpg" style="width: 500px; height: 500px;" border="5px">
+      </div>
 
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src= "BilingualBionics.jpg" style="width: 500px; height: 500px; " border="5">
+      </div>
 
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src= "FoliageTown.png"  style="width: 500px; height: 500px; " border="5">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src= "Igraduated.jpg" style="width: 500px; height: 500px; "   border="5">
+      </div>
 
-        <div class="idImage">    
-            <img src="lovingit.jpg" alt="Me helping Students develop a web page" >
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src= "metakingapie.jpg"  style="width: 500px; height: 500px; "  border="5">
+      </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+                <img src= "T_gameplay.PNG"  style="width: 500px; height: 500px; "  border="5">
+      </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+                <img src= "me%20at%20camp.jpg"  style="width: 500px; height: 500px; "  border="5">
+      </div>
+         <div class="mySlides fade">
+            <div class="numbertext"></div>
+                <img src= "T_gameplay.PNG"  style="width: 500px; height: 500px; "  border="5">
+      </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+                <img src= "class.PNG"  style="width: 500px; height: 500px; "  border="5">
+      </div>
+   
+   
+    </div>
+    
+        <script>
+            
+            var slideIndex = 0;
+            carousel();
+
+            function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none"; 
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {slideIndex = 1} 
+                x[slideIndex-1].style.display = "block"; 
+                setTimeout(carousel,4000); // Change image every 2 seconds
+            }
+        </script>
+        <div class="foot-wrapper">
+        <div class="footer">
+            <div id="copy" style="text-align: left ">
+               © 2017 Chase Christensen 
+                </div>
+            <div id="footlinks" style="text-align: center">
+                <a href="https://goo.gl/forms/FtfmduGh9CGi5CgW2">Contact Me(Form)</a> <a href="Resume.html">Credits</a> <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>  
+            </div>
+            <div id ="right" style="text-align: right">
+                 Contact Information:<a href="mailto:christensenc3526@gmail.com">christensenc3526@gmail.com</a>
+            </div>
         </div>
-        <p>
-        Thank you for visiting my portfolio page!This website is a work in progress, as I explore better web development practices I hope to continue to drastically improve this webpage. Please use the above links to explore different aspects of my professional life.Use the feedback link to navigate to a google survey that will ask you about ways I can improve this site. I am always looking for new projects and ways to improve.Thanks again! <br>
-        Sincerely, <br>
-        Chase Christensen 
-       </p>
+        </div>
     </body>
 </html>
-
-
-
