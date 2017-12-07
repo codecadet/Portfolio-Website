@@ -1,12 +1,18 @@
 <link rel = "stylesheet" 
-      type = "text/css"
-      href ="portfolioSiteStyleSheetFrontPage.css"/>
+type = "text/css"
+href ="portfolioSiteStyleSheetFrontPage.css"/>
 <html>
+    <style>
+        body 
+      {
+         background-image: url("lil_fiber_@2X.png");
+      }
+    </style>
     <head>
-        <Title>About Chase </Title>
+        <Title> About Me </Title>
     </head>
     <body>
-         <div class="navbar" id="navbar">
+        <div class="navbar" id="navbar">
                 <a href="PortfolioSitev1.html"> Home</a>
                 <a href="Resume.html">Resume</a>
                 <div class="dropdown">
@@ -36,55 +42,163 @@
                         <a href="NeonFuryDesignPage.html">Neon Fury</a>
                     </div>
                 </div> 
-                <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>
                 <a href="bio.html">About Me</a>
-                  <a href=projectSelect.html>Projects</a>
-            </div>
+                <a href=projectSelect.html>Projects</a>
+        </div>
               
-        <h1> Chase Christensen </h1>
-        <h2> University of Wisconsin Stout Class of 2017 </h2>
-        <img src="Igraduated.jpg" alt="Me after Just graduating" style="width:128x;height 128pxs;">   
+      
 
-        <p>To My Digial Guests,<br/>
-        Thank you so much for visiting my site and learning a bit about me.My name is Chase Soren Christensen. I was born in Edina Minnesota, went to Normandale French Immersion, received my high school diploma from Edina High School,and graduated from the  University of Wisconsin Stout.I earned a degree in game design and development with a computer science concentration. I also earned an applied language minor.
+    <div class="slideshow-container" id ="container">
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src="Igraduated.jpg" style="width:40%"  border="5px">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src= "me%20at%20camp.jpg" style="width:50%" border="5">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src= "foliageShop.PNG" style="width:50%" border="5">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src= "FoliageTown.png" style="width:50%" border="5">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+            <img src= "RaceGame.PNG" style="width:50%" border="5">
+      </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+                <img src= "speedMatching.PNG" style="width:50%" border="5">
+      </div>
+     <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center " class="dotContainer">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+    </div>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+            function checkScroll()
+            { 
+                var body = document.body;
+              if(body.scrollHeight-body.scrollTop==body.clientHeight)
+                  {
+                              $(document).ready(function()
+                            {
+                                    $("#foot").fadeIn("slow");
+                                    
+                            });
+                  }
+                else
+                {
+                  
+                           $(document).ready(function()
+                            {
+                                    $("#foot").fadeOut("slow");
+                                    
+                            });
+                      
+                }
+                
+            }
+            setInterval(checkScroll, 500);
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        var interval;
+        function plusSlides(n) 
+        {
+            showSlides(slideIndex += n);
+        
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        function displayText()
+        {
+            if(slideIndex==1)
+            {
+              document.getElementById("gameText").innerHTML = "I graduated in the Spring of 2017 with a game design development degree with a focus in computer science.I also earned an applie language minor.";       
+            }
+            else if(slideIndex==2)
+            {
+                document.getElementById("gameText").innerHTML = "The first job I ever had was being a camp counselor. I started working at age 14 as a volunteer and worked my way up to a full counselor. I taught kids rock climbing,and the 4 core values of the YMCA. I was promoted to bus captain. I was in charge of checking campers on and off the bus.";    
+            }
+            else if (slideIndex==3)
+            {
+                document.getElementById("gameText").innerHTML = "After being a counselor, I worked as a high ropes instructor. I worked on both high and low initiatives in order to teach groups of all ages team work and leadership skills. I was in charge of planning the events once groups arrived and scheduling the team building activities. We also did routine safety and skill assesment checks to make sure the course was in tip top shape.";    
+            }
+            else if(slideIndex==4)
+            {
+                document.getElementById("gameText").innerHTML = "I was told by my RA to apply for a position as an ASK5000 technician,and was hired.As a technician, I would be in charge of creating tickets and solving both hardware and software issues. I worked in quality assurance during the summer and juggled my high ropes course job as well as courses. I eventually moved up front where I was trained on common isssues at the university and how to trouble shoot them or assign them to the proper area in order to have the issues resolved as efficiently as possible. Trainning was one week during the summer,but most of the learning was real time on the job";    
+            }
+            else if(slideIndex==5)
+            {
+                document.getElementById("gameText").innerHTML = "The above mini game challenges the player to match the plant with its picture as quick as possible.If the player answers incorrectly they are slowed down and the evil robot will begin to the close the distacnce, but if the player matches correctly they receive a speed boost.This mini game is meant to create a high pressure environment forcing the player to be fast on their feet and truly test how well they know the material.";    
+            }
+            else if(slideIndex==6)
+            {
+                document.getElementById("gameText").innerHTML = "The above mini game is a matching game. The player must match the plant picture with its description.This mini game is a medium difficulty event. The game is designed so that the player is allowed to make mistakes, but is still challenged to test their memory.";    
+            }
+        }
+    
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides fade");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1} 
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+              
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          displayText();       
+        }
+        </script>
+      
+        <div class="slideDescription">
+        <p id="gameText">
+           I graduated in the Spring of 2017 with a game design development degree with a focus in computer science.I also earned an applie language minor.
         </p>
-
-        <h1> Camp Counselor </h1>    
-        <img src="batman%20cupcakes.jpg" alt="enjoying batman cupcakes with my group at camp kici yapi" style="width:264x;height 264pxs;">
-        <p> 
-
-         I have worked all sorts of jobs building up to my decision to become a game designer and developer. I worked at my local YMCA as a day camp instructor. I worked with kids of all ages and enjoyed the great outdoors with them all while teaching the four coore values of the YMCA respect, responsibility, honesty, and caring. I did a lot of rock climbing and worked at the YMCA from ages 14-20. After that I spent a summer working at a high ropes courses teaching leadership through high ropes challenges and team building exercises.
-        </p>
-
-
-        <h1> University of Wisconsin Stout PC Repair Manager</h1>
-        <img src="helpDeskTechnician.jpg" alt=" Me Working a Shift at The Help Desk" style="width:264x;height 264pxs;">
-        <p> 
-             After working at the ropes course, I took a job as a UW-Stout Technician. I worked to solve hardware and software problems across campus and created resources to resolve those issues. I was eventually promoted to the PC-Repair Manager. As the PC Repair Manager, I oversaw managing my own area of PC Repair. I would work with faculty and staff to resolve their hardware issues and train technicians how to solve their software issues. I worked with every department on campus and had to keep track of the machines during the repair process, and document anything we did to resolve the issue. Tasks included checking warranty, Contact HP for parts, shipping and receiving machines, setting up new machines, troubleshooting via the phone or in person, backing up and restoring data, training new and veteran employees, creating documentation for the employees to reference, working with full time staff, and continuing to work with the other managers as well as my course work. I was the only PC Repair manager, and I answered to the Student Technology Assistance Resources Director. To learn more about the help desk you can visit <a href="https://kb.uwstout.edu/">The Technology Help Desk Knowledge Base Page </a>
-        </p>
-        <h1>SQL Report Developer(Internship) </h1>
-        <img src="mySQL.png" alt="Microsoft SQL" style="width:264x;height 264pxs;"> 
-        <p>
-        During the winter term of 2015 I helped the buisness office write reports, and helped them migrate from Hyperion to My SQL. I was the only SQL writer in the office, and had to work in a beta environment to create reports and test the new data base.
-        </p>
-
-
-
-        <h1> iD Tech Instructor</h1>
-         <h2>Below: I am the one in the Death Star Shirt, Blonde Hair, and Jean Vest hanging out with the Madison ID Tech Staff as an instructor</h2>
-         <img src="Iam2cool.jpg" alt="Chilling with my Madison Team" style="width:264x;height 264pxs;">
-        <p>
-            During the summers of 2015 and 2016 I worked at ID Tech as an instructor and then a lead instructor. I worked with gamers of all ages and taught all sorts of game and programming related courses. The first summer I worked in Madison, WI and the 2nd summer I worked in Milwaukee, WI.I was promoted to lead instructor. I stayed over night in the dorms and made sure the younglings got to all their activities and left with a passion for Game Design. You can learn more about ID Tech on <a href="https://www.idtech.com/?gclid=CjwKEAjwpdnJBRC4hcTFtc6fwEkSJABwupNiTBnXNE4myjnO90fuiXyEXLJ0M2rcRZV39vK1tmnKqhoCLSzw_wcB"> Their Official Site </a>. My Resume includes a list of courses I taught.
-        </p>
-
-
-        <h1> Activision Quality Assurance </h1>
-        <img src="Stronghold_Metadata_Image.jpg" alt="Call of Duty" style="width:264x;height 264pxs;">
-        <p>
-            After graduation, I began my career as a Activision Quality Assurance Tester.I worked on the Call of Duty WWII title.I worked 10-12 hour days for a little over 3 months reporting 298 issues. Each issue had a lengthy reporting process. The issue subjects included, but are not limited to, graphical corruption, broken or inconsistent AI, progression breaks, minor art issues, exploits, menu inconsistency, major crashes, losses of functionality, game balancing, ui visual, ui functionality, consistency with past titles, text, legal, and historical accuracy.I worked in Jira and the devtrack suite to track issues and continuously update the necessary elements for the devs. I chose to part ways with Activision as my contract concluded. My goal is to develop software. The quality assurance position was a great opportunity to learn about a triple a company, and get an inside view of the products as they approache launch, but my ultimate goal is to continously improve my coding practices and develop games full time. I hope to apply my techncial skills in a fast paced professional environment and add many titles to my portfolio.
-        </p>
-
+        </div>  
+        
+     
+      
+         <div class="foot-wrapper" style="text-align: center">
+        <div class="footer" style="padding-top: 1%;" id="foot">
+            <div id="copy">
+               © 2017 Chase Christensen 
+                </div>
+            <div id="footlinks">
+                <a href="https://goo.gl/forms/FtfmduGh9CGi5CgW2">Contact Me(Form)</a> <a href="Resume.html">Credits</a> 
+                <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>  
+            </div>
+            <div id ="right" >
+                 Contact Information:<a href="mailto:christensenc3526@gmail.com">christensenc3526@gmail.com</a>
+            </div>
+           </div>
+        </div>
+    
+        
+            
     </body>
-
 </html>
-

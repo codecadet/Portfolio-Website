@@ -1,7 +1,14 @@
 <link rel = "stylesheet" 
 type = "text/css"
 href ="portfolioSiteStyleSheetFrontPage.css"/>
+
 <html>
+      <style>
+        body {
+           background-image: url("lil_fiber_@2X.png");
+        }
+    </style>
+   
     <head>
 
         <Title>Projects Page</Title>
@@ -81,8 +88,50 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
 </div>
 
 <div class="clearfix"></div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        
+            function checkScroll()
+            { 
+                var body = document.body;
+              if(body.scrollHeight-body.scrollTop==body.clientHeight)
+                  {
+                              $(document).ready(function()
+                            {
+                                    $("#foot").fadeIn("slow");
+                                    
+                            });
+                  }
+                else
+                {
+                  
+                           $(document).ready(function()
+                            {
+                                    $("#foot").fadeOut("slow");
+                                    
+                            });
+                      
+                }
+                
+            }
+            setInterval(checkScroll, 500);
+         </script>
+         
+         <div class="foot-wrapper" style="text-align: center">
+        <div class="footer" style="padding-top: 1%;" id="foot">
+            <div id="copy">
+               © 2017 Chase Christensen 
+                </div>
+            <div id="footlinks">
+                <a href="https://goo.gl/forms/FtfmduGh9CGi5CgW2">Contact Me(Form)</a> <a href="Resume.html">Credits</a> 
+                <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>  
+            </div>
+            <div id ="right" >
+                 Contact Information:<a href="mailto:christensenc3526@gmail.com">christensenc3526@gmail.com</a>
+            </div>
+           </div>
+        </div>
 
-<div style="padding:6px;">
     </body>
     
 </html>    

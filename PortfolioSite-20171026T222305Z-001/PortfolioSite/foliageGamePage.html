@@ -2,6 +2,12 @@
 type = "text/css"
 href ="portfolioSiteStyleSheetFrontPage.css"/>
 <html>
+    <style>
+        body 
+      {
+         background-image: url("gaming-pattern.png");
+      }
+    </style>
     <head>
 
         <Title> Foliage Feud Game </Title>
@@ -89,8 +95,32 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
       <span class="dot" onclick="currentSlide(5)"></span>
       <span class="dot" onclick="currentSlide(6)"></span>
     </div>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        
+            function checkScroll()
+            { 
+                var body = document.body;
+              if(body.scrollHeight-body.scrollTop==body.clientHeight)
+                  {
+                              $(document).ready(function()
+                            {
+                                    $("#foot").fadeIn("slow");
+                                    
+                            });
+                  }
+                else
+                {
+                  
+                           $(document).ready(function()
+                            {
+                                    $("#foot").fadeOut("slow");
+                                    
+                            });
+                      
+                }
+                
+            }
+            setInterval(checkScroll, 500);
         var slideIndex = 1;
         showSlides(slideIndex);
         var interval;
@@ -157,13 +187,14 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
           displayText();       
         }
         </script>
+      
         <div class="slideDescription">
         <p id="gameText">
            Folieage Feud is an educational game,developed over a single semester,to help students learn more about the plant life in Wisconsin State Parks.   
         </p>
         </div>  
         
-        <div class="team">
+        <div class="team" style="margin-bottom:5%;">
             <p >
                 Team Members:<br /> 
                 <a id="mem" href="http://www.adamholcombe.com/index.php#top">Adam Holcombe(Programmer)</a><br />
@@ -177,6 +208,22 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
         </div>
      
       
+         <div class="foot-wrapper" style="text-align: center">
+        <div class="footer" style="padding-top: 1%;" id="foot">
+            <div id="copy">
+               © 2017 Chase Christensen 
+                </div>
+            <div id="footlinks">
+                <a href="https://goo.gl/forms/FtfmduGh9CGi5CgW2">Contact Me(Form)</a> <a href="Resume.html">Credits</a> 
+                <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>  
+            </div>
+            <div id ="right" >
+                 Contact Information:<a href="mailto:christensenc3526@gmail.com">christensenc3526@gmail.com</a>
+            </div>
+           </div>
+        </div>
+    
+        
             
     </body>
 </html>
