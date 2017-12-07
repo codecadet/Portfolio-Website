@@ -96,8 +96,47 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
    
     </div>
     
+        <div class="foot-wrapper" style="text-align: center">
+        <div class="footer" style="padding-top: 2.5%;" id="foot">
+            <div id="copy">
+               © 2017 Chase Christensen 
+                </div>
+            <div id="footlinks">
+                <a href="https://goo.gl/forms/FtfmduGh9CGi5CgW2">Contact Me(Form)</a> <a href="Resume.html">Credits</a> 
+                <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>  
+            </div>
+            <div id ="right" >
+                 Contact Information:<a href="mailto:christensenc3526@gmail.com">christensenc3526@gmail.com</a>
+            </div>
+           </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
-            
+        
+            function checkScroll()
+            { 
+                var body = document.body;
+              if(body.scrollHeight-body.scrollTop==body.clientHeight)
+                  {
+                              $(document).ready(function()
+                            {
+                                    $("#foot").fadeIn("slow");
+                                    
+                            });
+                  }
+                else
+                {
+                  
+                           $(document).ready(function()
+                            {
+                                    $("#foot").fadeOut("slow");
+                                    
+                            });
+                      
+                }
+                
+            }
+            setInterval(checkScroll, 500);
             var slideIndex = 0;
             carousel();
 
@@ -109,22 +148,10 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
             }
             slideIndex++;
             if (slideIndex > x.length) {slideIndex = 1} 
-                x[slideIndex-1].style.display = "block"; 
-                setTimeout(carousel,4000); // Change image every 2 seconds
+                x[slideIndex-1].style.display = "block";
+                
+                setTimeout(carousel,4000); // Change image every 4 seconds
             }
         </script>
-        <div class="foot-wrapper">
-        <div class="footer">
-            <div id="copy" style="text-align: left ">
-               © 2017 Chase Christensen 
-                </div>
-            <div id="footlinks" style="text-align: center">
-                <a href="https://goo.gl/forms/FtfmduGh9CGi5CgW2">Contact Me(Form)</a> <a href="Resume.html">Credits</a> <a href="https://goo.gl/forms/oAiRJPHFLYj1o9sq2">Feedback</a>  
-            </div>
-            <div id ="right" style="text-align: right">
-                 Contact Information:<a href="mailto:christensenc3526@gmail.com">christensenc3526@gmail.com</a>
-            </div>
-        </div>
-        </div>
     </body>
 </html>
