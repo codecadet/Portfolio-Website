@@ -160,7 +160,22 @@ padding-top:15px;
     border-style: solid;
 	
  }
+ 
+/*text for the game page */
 #gameText
+{
+	padding-top:16px;
+	padding-bottom:16px;
+	text-align:center;
+	font-size:16px;
+	border:4px;
+	border-style:solid;
+	margin-bottom:16px;
+	margin-top:16px;
+	width:104%;
+}	
+/* text for the bio page*/
+#bioText
 {
 	padding-top:2%;
 	text-align:center;
@@ -169,9 +184,7 @@ padding-top:15px;
 	border-style:solid;
 	margin-bottom:20%;
 	margin-top:10%;
-	
-	
-}	
+}
 .slideDescription
 {
    position:absolute;
@@ -332,30 +345,42 @@ html, body
 }
 .team
 {
-	margin:auto;
-	margin-top:10%;
+
+	margin-top:160px;
 	text-align:center;
-	color:white;
+	color:black;
     width:50%;
 	height:40%;
 	border-style:solid;
-    background-image: url("white_carbonfiber_@2X.png");
+	margin-bottom:256px;
+	margin-left:25%;
+    
 	
 	
 	
 }
+
 #mem
 {
 	position: relative;
     z-index: 1;
 }
 
-.dotContainer
+/*this is the container for the bio page slide show*/
+.dotContainer 
 {
 	margin:auto;
 	width:50%;
 	float:bottom;
 	margin-top:15%;
+}
+/*this is the container for the game page slide shows*/
+.dotContainerGame
+{
+	margin:auto;
+	width:50%;
+	float:bottom;
+	margin-top:8%;
 }
 /* The dots/bullets/indicators */
 .dot {

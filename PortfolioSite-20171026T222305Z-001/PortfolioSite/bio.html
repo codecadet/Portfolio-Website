@@ -90,6 +90,16 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
             <div class="numbertext"></div>
                 <img src= "Stronghold_Metadata_Image.jpg"  style="width:50%; height: 50%; margin-top: 10%; " border="5">
       </div>
+        
+         <div class="mySlides fade">
+            <div class="numbertext"></div>
+                <img src= "snowBoard.jpg"  style="width:50%; height: 50%; margin-top: 10%; " border="5">
+      </div>
+        
+         <div class="mySlides fade">
+            <div class="numbertext"></div>
+                <img src= "Yoshi.jpg"  style="width:50%; height: 50%; margin-top: 10%; " border="5">
+      </div>
      <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
@@ -105,6 +115,8 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
       <span class="dot" onclick="currentSlide(7)"></span>
       <span class="dot" onclick="currentSlide(8)"></span>
       <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+      <span class="dot" onclick="currentSlide(11)"></span>
         
     </div>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -182,7 +194,7 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
         function checkButton()
         {
              e= document.getElementById("learn");
-            if(slideIndex==8)
+            if(slideIndex==8 || slideIndex==10 || slideIndex==11)
                 {
                    
                     e.disabled=true;
@@ -201,40 +213,48 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
         {
             if(slideIndex==1)
             {
-              document.getElementById("gameText").innerHTML = "I graduated in the Spring of 2017 with a game design development degree with a focus in computer science.I also earned an applie language minor.";       
+              document.getElementById("bioText").innerHTML = "I graduated in the Spring of 2017 with a game design development degree with a focus in computer science.I also earned an applie language minor.";       
             }
             else if(slideIndex==2)
             {
-                document.getElementById("gameText").innerHTML = "The first job I ever had was being a camp counselor. I started working at age 14 as a volunteer and worked my way up to a full counselor. I taught kids rock climbing,and the 4 core values of the YMCA. I was promoted to bus captain where I was in charge of checking campers on and off the bus as well as my normal camp counseling duties.";    
+                document.getElementById("bioText").innerHTML = "The first job I ever had was being a camp counselor. I started working at age 14 as a volunteer and worked my way up to a full counselor. I taught kids rock climbing,and the 4 core values of the YMCA. I was promoted to bus captain where I was in charge of checking campers on and off the bus as well as my normal camp counseling duties.";    
             }
             else if (slideIndex==3)
             {
-                document.getElementById("gameText").innerHTML = "After being a counselor, I worked as a high ropes instructor. I worked on both high and low initiatives in order to teach groups of all ages team work and leadership skills. I was in charge of planning the events once groups arrived and scheduling the team building activities. We also did routine safety and skill assesment checks to make sure the course was in tip top shape.";  
+                document.getElementById("bioText").innerHTML = "After being a counselor, I worked as a high ropes instructor. I worked on both high and low initiatives in order to teach groups of all ages team work and leadership skills. I was in charge of planning the events once groups arrived and scheduling the team building activities. We also did routine safety and skill assesment checks to make sure the course was in tip top shape.";  
             }
             else if(slideIndex==4)
             {
-                document.getElementById("gameText").innerHTML = "I was told by my RA to apply for a position as an ASK5000 technician,and was hired.As a technician, I would be in charge of creating tickets and solving both hardware and software issues. I worked in quality assurance during the summer and juggled my challenge course job as well as summer courses. I eventually moved up front where I was trained on common isssues at the university , how to trouble shoot them, and assign them to the proper area in order to have the issues resolved as efficiently as possible. Trainning was one week during the summer,but most of the learning was done on the fly.";    
+                document.getElementById("bioText").innerHTML = "I was told by my RA to apply for a position as an ASK5000 technician,and was hired.As a technician, I would be in charge of creating tickets and solving both hardware and software issues. I worked in quality assurance during the summer and juggled my challenge course job as well as summer courses. I eventually moved up front where I was trained on common isssues at the university , how to trouble shoot them, and assign them to the proper area in order to have the issues resolved as efficiently as possible. Trainning was one week during the summer,but most of the learning was done on the fly.";    
             }
             else if(slideIndex==5)
             {
-                document.getElementById("gameText").innerHTML = "I was promoted to the position of PC-Repair manager. I managed the entirety of the PC repair area. I logged incoming and out going computers, made site visits to help trouble shoot issues, scheduled pick ups and drop offs for any issues that could not be fixed in house, trained employess in my area as well as the upfront help desk area, maintained constant communication with clients, and did weekly manager meetings with my fellow managers as well as my higher ups. I created a manual to help students that work within my area to use as a reference, but I also had to push out daily updates to standard operating procedure. The 'Learn More' button will navigate you to a copy of that document.";    
+                document.getElementById("bioText").innerHTML = "I was promoted to the position of PC-Repair manager. I managed the entirety of the PC repair area. I logged incoming and out going computers, made site visits to help trouble shoot issues, scheduled pick ups and drop offs for any issues that could not be fixed in house, trained employess in my area as well as the upfront help desk area, maintained constant communication with clients, and did weekly manager meetings with my fellow managers as well as my higher ups. I created a manual to help students that work within my area to use as a reference, but I also had to push out daily updates to standard operating procedure. The 'Learn More' button will navigate you to a copy of that document.";    
             }
             else if(slideIndex==6)
             {
-                document.getElementById("gameText").innerHTML = "During the summer I worked at a technology based camp called 'iD tech'. I was an instructor in Madison, Wisconsin. I taught multiple game design and programming focused courses.I was in charge of planning the class work each day,and helping students develop epic projects. At the end of each week they students presented their projects to their parents, and I gave each student a personalized diploma that spoke to their hard work. I had 1 full day off a week and 2 nights off, but it was worth the hard work to teach game development and coding to kids of all ages. It was a blast!";    
+                document.getElementById("bioText").innerHTML = "During the summer I worked at a technology based camp called 'iD tech'. I was an instructor in Madison, Wisconsin. I taught multiple game design and programming focused courses.I was in charge of planning the class work each day,and helping students develop epic projects. At the end of each week they students presented their projects to their parents, and I gave each student a personalized diploma that spoke to their hard work. I had 1 full day off a week and 2 nights off, but it was worth the hard work to teach game development and coding to kids of all ages. It was a blast!";    
             }
              else if(slideIndex==7)
             {
-                document.getElementById("gameText").innerHTML = "After my first year as an instructor at Id Tech I was promoted to lead instructor. I was in charge of helping to set up the new camp in Milwaukee, Wisconsin.It was a small team, but I was in charge of helping with trainning, area reviews, instructor updates, giving out medicine, communicating with parents, checking students in and out, and teaching my normal courses. I developed worksheets for the courses I taught, and helped out the instructors with their courses. I also helped decorate and work closely with the director to create a safe and educational camp experience. You can view the materials I made under the 'worksheets' tab above.";    
+                document.getElementById("bioText").innerHTML = "After my first year as an instructor at Id Tech I was promoted to lead instructor. I was in charge of helping to set up the new camp in Milwaukee, Wisconsin.It was a small team, but I was in charge of helping with trainning, area reviews, instructor updates, giving out medicine, communicating with parents, checking students in and out, and teaching my normal courses. I developed worksheets for the courses I taught, and helped out the instructors with their courses. I also helped decorate and work closely with the director to create a safe and educational camp experience. You can view the materials I made under the 'worksheets' tab above.";    
             }
             
               else if(slideIndex==8)
             {
-                document.getElementById("gameText").innerHTML ="During winterm I was offered a posotion within the general services office to help with a host migration. I helped migrate from Hyperion to MySQL. I used SQL to generate reports for my boss and she would submit the data to accounting. Often my boss would tell me to grab certain data from certain tables and format it in such a way she could easily apply it to a template." ;    
+                document.getElementById("bioText").innerHTML ="During winterm I was offered a posotion within the general services office to help with a host migration. I helped migrate from Hyperion to MySQL. I used SQL to generate reports for my boss and she would submit the data to accounting. Often my boss would tell me to grab certain data from certain tables and format it in such a way she could easily apply it to a template." ;    
             }
             else if(slideIndex==9)
             {
-                document.getElementById("gameText").innerHTML = "After I graduated, instead of returning to Id tech as a director, I went ahead and applied for a quality assurance position at Activision Blizzard. I was hired and began in July 2017. I worked with a large team to help assure the quality of the new Call of Duty WWII video game. I worked the day shift, and many days went past 11 hours and required a therough sweep and understanding of the game. Each issue discovered had a lengthy submission process that involved me writting a bug report. After the report was submitted it would have to go through an approval process before being sent to the developers. I was responsible for updating known issues if they are discovered in current builds as well as discovering new issues. I reported issues about but ,not limited to, art,lighitng,consistency,graphics,collisions,AI,menus,player experience, and networking.The job lasted until mid November. The job was contracted and I opted out of extending my contract to search for more permanent work that would allow me to further improve my software development skills.";    
+                document.getElementById("bioText").innerHTML = "After I graduated, instead of returning to Id tech as a director, I went ahead and applied for a quality assurance position at Activision Blizzard. I was hired and began in July 2017. I worked with a large team to help assure the quality of the new Call of Duty WWII video game. I worked the day shift, and many days went past 11 hours and required a therough sweep and understanding of the game. Each issue discovered had a lengthy submission process that involved me writting a bug report. After the report was submitted it would have to go through an approval process before being sent to the developers. I was responsible for updating known issues if they are discovered in current builds as well as discovering new issues. I reported issues about but ,not limited to, art,lighitng,consistency,graphics,collisions,AI,menus,player experience, and networking.The job lasted until mid November. The job was contracted and I opted out of extending my contract to search for more permanent work that would allow me to further improve my software development skills.";    
+            }
+             else if(slideIndex==10)
+            {
+                document.getElementById("bioText").innerHTML = "In my free time I enjoy outdoor activities. I love snowboarding, and I am hoping to get back into rock climbing. Every year my family goes on a big ski trip and I love the adventure! I am always look for new activities when I am not coding or making games so I can stay fit physically and mentally.In the summer I like to swim, wakeboard, and go hiking.";    
+            }
+              else if(slideIndex==11)
+            {
+                document.getElementById("bioText").innerHTML = "I love video games and games in general.I believe that products that take great amounts imagination and work are the most fun to consume. I love playing Dungeons and Dragons with friends, playing retro games on my emulator, playing World of Warcraft, playing PS4 games, and watching movies. I love being taken to another place and exploring worlds created by other people.Playing games and reading really inspires me to use new mechanics or continue to explore ideas that other developers have explored. I hope to have more free time to continously work on games and my code portfolio.";    
             }
         }
     
@@ -259,8 +279,8 @@ href ="portfolioSiteStyleSheetFrontPage.css"/>
         </script>
       
         <div class="slideDescription">
-        <p id="gameText" style ="margin-top: 5%; margin-left:5%; padding-bottom:2%; text-align: center;">
-           I graduated in the Spring of 2017 with a game design development degree with a focus in computer science.I also earned an applie language minor.
+        <p id="bioText" style ="margin-top: 5%; margin-left:5%; padding-bottom:2%; text-align: center;">
+           I graduated in the Spring of 2017 with a game design development degree with a focus in computer science.I also earned an applied language minor.
         </p>
         </div>  
         
