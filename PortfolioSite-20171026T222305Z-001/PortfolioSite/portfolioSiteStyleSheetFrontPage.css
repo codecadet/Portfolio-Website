@@ -66,10 +66,8 @@ h4
 img {
     display: block;
     border-radius: 8px;
-    width:20%;
     margin: auto;
-    padding-top: 25px;
-    padding-bottom: 0px;
+    max-width:100%;
 
 }
 a {
@@ -128,7 +126,7 @@ padding-top:15px;
 }
 
 .button_container {
-    position:absolute;
+   
     height: 40%;
     width: 50%;
 	margin-top:10%;
@@ -187,7 +185,7 @@ padding-top:15px;
 }
 .slideDescription
 {
-   position:absolute;
+   
    width: 48%;
    height:25%;
    margin:auto;
@@ -298,12 +296,9 @@ html, body
 
 /* Slideshow container */
 .slideshow-container {
-  width: 75%;
+  width: 100%;
   height:100%;
-  position: absolute;
-  margin: center-left;
-  padding-left: 25%;
-
+  margin: auto;
 }
 
 .mySlides {
@@ -314,7 +309,7 @@ html, body
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
-  position: absolute;
+ 
   width: auto;
   padding: 16px;
   color: black;
@@ -359,6 +354,7 @@ html, body
 	
 	
 }
+
 
 #mem
 {
