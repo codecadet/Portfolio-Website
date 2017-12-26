@@ -162,15 +162,12 @@ padding-top:15px;
 /*text for the game page */
 #gameText
 {
-	padding-top:16px;
-	padding-bottom:16px;
+	
 	text-align:center;
 	font-size:16px;
 	border:4px;
-	border-style:solid;
-	margin-bottom:16px;
-	margin-top:16px;
-	width:104%;
+	width:100%;
+
 }	
 /* text for the bio page*/
 #bioText
@@ -180,18 +177,17 @@ padding-top:15px;
 	font-size:16px;
 	border:4px;
 	border-style:solid;
-	margin-bottom:20%;
-	margin-top:10%;
+	padding-bottom:2%;
+	width:80%;
+	margin:auto;
+	
 }
+
 .slideDescription
 {
-   
-   width: 48%;
-   height:25%;
-   margin:auto;
-   left:25%;
-   z-index:-1;
-   
+   width: 50%;
+   height:50%;
+   z-index:-1;   
 }
 p {
     font-family: verdana;
@@ -294,7 +290,7 @@ html, body
 
 * {box-sizing:border-box}
 
-/* Slideshow container */
+/* Slideshow container for the front page.*/
 .slideshow-container {
   width: 100%;
   height:100%;
@@ -305,7 +301,19 @@ html, body
     display: none;
 	
 }
+.game-slideshow-container
+{
+	width:50%;
+	height:100%;
+	margin:auto;
+}
+.slideDescription
+{
+    margin:auto;
+	width:50%;
 
+	border-style: solid;
+}
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -322,7 +330,7 @@ html, body
 
 /* Position the "next button" to the right */
 .next {
-  right:0;
+  right:390;
   border-radius: 3px 0 0 3px;
 }
 
@@ -340,21 +348,19 @@ html, body
 }
 .team
 {
-
-	margin-top:160px;
+    margin:auto;
 	text-align:center;
 	color:black;
     width:50%;
-	height:40%;
+	height:60%;
 	border-style:solid;
-	margin-bottom:256px;
-	margin-left:25%;
-    
-	
-	
+	margin-bottom:5%;
 	
 }
-
+.team p
+{
+	padding-top:5%;
+}
 
 #mem
 {
@@ -366,21 +372,24 @@ html, body
 .dotContainer 
 {
 	margin:auto;
-	width:50%;
-	float:bottom;
-	margin-top:15%;
+	width:15%;
+	height:1%;
+	float:top;
+	
 }
 /*this is the container for the game page slide shows*/
 .dotContainerGame
 {
 	margin:auto;
-	width:50%;
-	float:bottom;
-	margin-top:8%;
+	width:15%;
+	height:1%;
+	float:top;
+	
+
+
 }
 /* The dots/bullets/indicators */
 .dot {
-   margin-top: 30%;
   cursor:pointer;
   height: 15px;
   width: 15px;
